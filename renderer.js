@@ -3,7 +3,7 @@ const React = require("react");
 const ReactDOM = require("react-dom");
 
 // Import the main App component
-const App = require("./index.js");
+const App = require("./pages/app.js");
 
 console.log("Renderer process running.");
 

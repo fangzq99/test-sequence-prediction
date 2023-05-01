@@ -5,23 +5,43 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';" />
     <title>Base HTML</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1>My Capstone!</h1>
+    <!-- Navbar -->
+    <h1 class="title">My Capstone!</h1>
+
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="#home" id="logo"></a>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div>
+        <ul class="navbar__menu">
+          <li class="navbar_logo" id="navbar-logo"></li>
+          <li class="navbar_item">
+            <a href="home" class="navbar_links" id="home-page">Home</a>
+          </li>
+          <li class="navbar__item2">
+            <a href="test-execution" class="navbar_links" id="test-execution-page">Test Execution</a>
+          </li>
+          <li class="navbar__item3">
+            <a href="resources" class="navbar_links" id="resources-page">Resources</a>
+          </li>
+          <li class="navbar__item4">
+            <a href="automatic-documentation" class="navbar_links" id="auto-doc-page">Automatic Documentation</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <span id="but1"></span>
     <span id="but2"></span>
-
     <button type="button" onclick="myFunction()">Try it</button>
     <button type="button" onclick="myFunction2()">Print</button>
-
-
-	
-	<button type="button" onclick="myFunction3()">Alert!</button>
-
-    <script src="ohno.js"></script>
-    <script>
-      console.log("2");
-    </script>
+    <button type="button" onclick="myFunction3()">Print a useless string</button>
+    <script src="./logic.js"></script>
   </body>
 </html>

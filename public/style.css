@@ -6,6 +6,46 @@ body {
 }
 
 h1 {
-  text-align: center;
+  text-align: left;
   padding: 20px;
+  margin: 20px;
+  padding: 0;
+  font-family: sans-serif, 'Kumb Sans';
+  /* text-shadow: 3px 3px 1px black; */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumb Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: #0e90cc;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar_logo {
+  background-color: #ff8177;
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 }
