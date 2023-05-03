@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  height: 120px;
+  width: 300px;
+  display: flex;
+  background: #25bbcf;
+  text-align: left;
+  padding: 20px;
+  margin: auto;
+  font-family: sans-serif, 'Kumb Sans';
+  white-space: nowrap;
+  /* text-shadow: 3px 3px 1px black; */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumb Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: #69df25;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar_logo {
+  background-color: #ff8177;
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+
+/* Testing */
+ul.navbar__menu {
+  list-style: none;
+}
+
+div.text-display-container {
+  width: 100px;
+  height: 20px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+a#logo img {
+  width: auto;
+  height: 90px;
+  /* border-radius: 50%; */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  background-color: #008cba;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  background-color: #007a8e;
+}
+
+.button-container button {
+  width: 200px; /* Set the same width for all buttons */
+  height: 50px; /* Set the same height for all buttons */
+  display: block;
+  padding: 5px;
+  margin: 5px;
+}

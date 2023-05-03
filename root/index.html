@@ -5,16 +5,19 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';" />
     <title>Base HTML</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script></script>
+    <script src="./scripts/index.js"></script>
   </head>
 
   <body>
     <!-- Navbar -->
-    <h1 class="title">My Capstone!</h1>
-
     <nav class="navbar">
+      <h1 class="page_title">My Capstone</h1>
       <div class="navbar__container">
-        <a href="#home" id="logo"></a>
+        <a href="#home" id="logo">
+          <img src="./images/perhaps-cow.jpg" alt="" />
+        </a>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
@@ -28,7 +31,7 @@
             <a href="test-execution" class="navbar_links" id="test-execution-page">Test Execution</a>
           </li>
           <li class="navbar__item3">
-            <a href="resources" class="navbar_links" id="resources-page">Resources</a>
+            <a href="./pages/testResources.html" class="navbar_links" id="resources-page">Resources</a>
           </li>
           <li class="navbar__item4">
             <a href="automatic-documentation" class="navbar_links" id="auto-doc-page">Automatic Documentation</a>
@@ -37,11 +40,16 @@
       </div>
     </nav>
 
-    <span id="but1"></span>
-    <span id="but2"></span>
-    <button type="button" onclick="myFunction()">Try it</button>
-    <button type="button" onclick="myFunction2()">Print</button>
-    <button type="button" onclick="myFunction3()">Print a useless string</button>
-    <script src="./logic.js"></script>
+    <main>
+      <div class="button-container">
+        <button class="test-button-1" type="button" onclick="myFunction()">Try it</button>
+        <button class="test-button-2" type="button" onclick="myFunction2()">Print</button>
+        <button class="test-button-3" type="button" onclick="myFunction3()">Print a useless string</button>
+        <button onclick="displayText()">Display text in the box below</button>
+      </div>
+      <div class="text-display-container"></div>
+    </main>
+
+    <footer>END</footer>
   </body>
 </html>

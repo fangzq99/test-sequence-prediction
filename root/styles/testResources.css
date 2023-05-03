@@ -6,11 +6,15 @@ body {
 }
 
 h1 {
+  height: 120px;
+  width: 300px;
+  display: flex;
+  background: #25bbcf;
   text-align: left;
   padding: 20px;
-  margin: 20px;
-  padding: 0;
+  margin: auto;
   font-family: sans-serif, 'Kumb Sans';
+  white-space: nowrap;
   /* text-shadow: 3px 3px 1px black; */
 }
 
@@ -23,7 +27,7 @@ h1 {
 }
 
 .navbar {
-  background: #0e90cc;
+  background: #69df25;
   height: 120px;
   display: flex;
   justify-content: center;
@@ -48,4 +52,26 @@ h1 {
 #navbar_logo {
   background-color: #ff8177;
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+
+/* Testing */
+ul.navbar__menu {
+  list-style: none;
+}
+
+div.text-display-container {
+  width: 100px;
+  height: 20px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#logo img {
+  width: auto;
+  height: 90px;
+  /* border-radius: 50%; */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

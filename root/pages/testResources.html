@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';" />
+    <title>Resources</title>
+    <link rel="stylesheet" href="../styles/testResources.css" />
+    <script></script>
+    <script src="../scripts/testResources.js"></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <h1 class="page_title">My Capstone</h1>
+      <div class="navbar__container">
+        <a href="#home" id="logo">
+          <img src="../images/qa-logo.png" alt="" />
+        </a>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div>
+        <ul class="navbar__menu">
+          <li class="navbar_logo" id="navbar-logo"></li>
+          <li class="navbar_item">
+            <a href="home" class="navbar_links" id="home-page">Home</a>
+          </li>
+          <li class="navbar__item2">
+            <a href="test-execution" class="navbar_links" id="test-execution-page">Test Execution</a>
+          </li>
+          <li class="navbar__item3">
+            <a href="resources" class="navbar_links" id="resources-page">Resources</a>
+          </li>
+          <li class="navbar__item4">
+            <a href="automatic-documentation" class="navbar_links" id="auto-doc-page">Automatic Documentation</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <button class="test1" type="button" onclick="myFunction()">Try it</button>
+    <button class="test2" type="button" onclick="myFunction2()">Print</button>
+    <button class="test3" type="button" onclick="myFunction3()">Print a useless string</button>
+
+    <main>
+      <button onclick="displayText()">Display text in the box below</button>
+      <div class="text-display-container"></div>
+    </main>
+
+    <footer>END</footer>
+  </body>
+</html>
