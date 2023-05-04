@@ -1,0 +1,6 @@
+c:/
+adb -s RR8M40R2SNB uninstall io.appium.uiautomator2.server
+adb -s RR8M40R2SNB uninstall io.appium.uiautomator2.server.test
+adb -s RR8M50RHGYM uninstall io.appium.uiautomator2.server
+adb -s RR8M50RHGYM uninstall io.appium.uiautomator2.server.test
+ping 192.0.2.1 -n 1 -w 2 >nul
