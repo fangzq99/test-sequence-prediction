@@ -9,7 +9,7 @@ h1 {
   height: 120px;
   width: 300px;
   display: flex;
-  background: #25bbcf;
+  /* background: #25bbcf; */
   text-align: left;
   padding: 20px;
   margin: auto;
@@ -27,7 +27,7 @@ h1 {
 }
 
 .navbar {
-  background: #69df25;
+  background: #1682b4;
   height: 120px;
   display: flex;
   justify-content: center;
