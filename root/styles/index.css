@@ -13,63 +13,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.navbar {
-  /* background: #9e6a25; */
-  border-bottom: 2px solid #000;
-  height: 70px;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-/* .image-container {
-  max-height: 100%;
-  max-width: 100%;
-  padding: 10px 10px;
-} */
-
-.home-icon img {
-  width: 50px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.title-container {
-  max-height: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  display: inline-flex;
-  padding: 20px;
-  /* margin: auto; */
-  font-family: sans-serif, 'Kumb Sans';
-  white-space: nowrap;
-}
-
-h1.page-title {
-  color: black;
-}
-
-.navbar-placeholder-container {
-  display: flex;
-  justify-content: space-between;
-  height: 80px;
-  z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 50px;
-}
-
-#navbar_logo {
-  background-color: #ff8177;
-  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-}
-
 div.text-display-container {
   width: 120px;
   height: 20px;
@@ -91,21 +34,23 @@ a#logo img {
   display: inline-flex;
   flex-direction: column;
   float: left;
-  margin-left: 25px;
-  margin-top: 25px;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 
 .buttons-container button {
   width: 170px; /* Set the same width for all buttons */
   height: 50px; /* Set the same height for all buttons */
   padding: 5px;
-  margin: 5px;
+  margin: 10px;
   text-decoration: none;
-  background-color: #008cba;
+  background-color: rgb(61, 144, 200);
   display: block;
   color: white;
   padding: 10px 20px;
-  border: none;
+  /* border: none; */
+  border: 1px solid black;
+  /* border-color: black; */
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
@@ -113,51 +58,10 @@ a#logo img {
 }
 
 button:hover {
-  background-color: #007a8e;
+  background-color: #ece5e5;
+  color: black;
 }
 
 a[href] {
   text-decoration: none;
-}
-
-.navbar-menu {
-  position: relative;
-  display: flex;
-}
-
-.menu-button {
-  background: transparent;
-  padding: 10px;
-  cursor: pointer;
-  border: 1px solid black;
-}
-
-.dropdown-menu {
-  /* display: none; */
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 158px;
-  z-index: 1;
-  right: 0%;
-}
-
-.dropdown-menu a:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.navbar-menu:hover .dropdown-menu {
-  display: flex;
-  flex-direction: column;
-}
-
-.navbar-menu .navbar_links {
-  text-align: center;
-}
-
-.navbar-menu:hover .menu-button {
-  background-color: transparent;
 }

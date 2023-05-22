@@ -1,0 +1,135 @@
+.navbar {
+  /* background: #9e6a25; */
+  /* border-bottom: 2px solid #000; */
+  height: 70px;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar .image-container {
+  padding-top: 7px;
+}
+
+.navbar-placeholder-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar_logo {
+  background-color: #ff8177;
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+
+.home-icon img {
+  width: 30px;
+  /* height: 40px; */
+  object-fit: contain;
+}
+
+.small-vertical-divider-container {
+  display: inline-flex;
+  padding: 10px 0 10px 10px;
+}
+
+.navbar-small-divider {
+  border-left: 1px solid #38546d;
+  border-right: 1px solid #5f6264;
+  height: 40px;
+  position: relative;
+  /* left: 12.5px; */
+  /* top: 5px; */
+}
+
+.title-container {
+  max-height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  padding: 20px;
+  /* margin: auto; */
+  font-size: 20px;
+  font-family: sans-serif, 'Kumb Sans';
+  white-space: nowrap;
+}
+
+h1.page-title {
+  color: black;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+hr.navbar-divider {
+  border-top: 2px solid #b8b4b4;
+}
+
+.menu-button {
+  background: transparent;
+  top: 3px;
+  right: 5px;
+  padding: 10px;
+  cursor: pointer;
+  /* border: 1px solid black; */
+  border: none;
+  font-size: 16px;
+  position: relative;
+  /* margin-right: 16px;
+    NOTE: This is obtained from .navbar's padding which is 1.2rem=16px */
+}
+
+.menu-button:hover,
+.menu-button.hover {
+  /* Add styling for button hover state */
+  background-color: #ece5e5;
+  color: black;
+  border-bottom: none;
+  transition: background-color 0.5s;
+}
+
+.navbar-menu-container .dropdown-menu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 158px;
+  z-index: 1;
+  right: 0%;
+  margin-right: 16px;
+  /* NOTE: This is obtained from .navbar's padding which is 1.2rem=16px */
+}
+
+/* Ensure the drop down menu shows up as a horizontal list when hovered over */
+.navbar-menu-container:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu .navbar_item:hover {
+  background-color: #f8f4f4;
+  color: #fff;
+  transition: background-color 0.5s;
+}
+
+/* Style menu options container for each option */
+.navbar-menu-container .navbar_item {
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid black;
+  font-size: 16px;
+}
+
+/* Set menu options text to black */
+.navbar-menu-container .navbar_item div {
+  color: black;
+}

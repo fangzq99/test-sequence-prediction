@@ -6,7 +6,8 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';" />
     <title>Base HTML</title>
     <link rel="stylesheet" href="./styles/index.css" />
-    <script></script>
+    <link rel="stylesheet" href="./styles/universalStyles.css" />
+    <script src="./scripts/universalScripts.js"></script>
     <script src="./scripts/index.js"></script>
   </head>
 
@@ -17,6 +18,9 @@
         <a href="./index.html" class="home-icon" id="main-logo">
           <img src="./images/home-icon.png" alt="" />
         </a>
+      </div>
+      <div class="small-vertical-divider-container">
+        <div class="navbar-small-divider"></div>
       </div>
       <div class="title-container">
         <h1 class="page-title">Home</h1>
@@ -29,36 +33,44 @@
         <span class="bar"></span>
       </div>
       <div class="navbar-menu-container">
-        <div class="navbar-menu">
-          <button class="menu-button">Menu</button>
-          <ul class="dropdown-menu">
-            <li class="navbar_item">
-              <a href="./index.html" class="navbar_links" id="home-page">Home</a>
-            </li>
-            <li class="navbar_item2">
-              <a href="pages/testExecution.html" class="navbar_links" id="test-execution-page">Test Execution</a>
-            </li>
-            <li class="navbar_item3">
-              <a href="pages/testResources.html" class="navbar_links" id="test-resources-page">Test Resources</a>
-            </li>
-            <li class="navbar_item4">
-              <a href="pages/gptIntegration.html" class="navbar_links" id="gpt-integration-page">GPT Integration</a>
-            </li>
-          </ul>
-        </div>
+        <button class="menu-button">Menu</button>
+        <ul class="dropdown-menu">
+          <!-- <li class="navbar_item">
+            <a href="./index.html" class="navbar-links" id="home-page">
+              <div>Home</div>
+            </a>
+          </li> -->
+          <li class="navbar_item">
+            <a href="./pages/testExecution/executionMain.html" class="navbar-links" id="test-execution-page">
+              <div>Test Execution</div>
+            </a>
+          </li>
+          <li class="navbar_item">
+            <a href="./pages/testResources/resourcesMain.html" class="navbar-links" id="test-resources-page">
+              <div>Test Resources</div>
+            </a>
+          </li>
+          <li class="navbar_item">
+            <a href="./pages/gptIntegration/integrationMain.html" class="navbar-links" id="gpt-integration-page">
+              <div>GPT Integration</div>
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
 
+    <hr class="navbar-divider" />
+
     <main>
       <div class="buttons-container">
-        <a href="pages/testExecution.html">
-          <button class="test-execution">Test Execution</button>
+        <a href="./pages/testExecution/executionMain.html">
+          <button class="test-feature" id="test-execution">Test Execution</button>
         </a>
-        <a href="pages/testResources.html">
-          <button class="test-resources">Test Resources</button>
+        <a href="./pages/testResources/resourcesMain.html">
+          <button class="test-feature" id="test-resources">Test Resources</button>
         </a>
-        <a href="pages/gptIntegration.html">
-          <button class="gpt-integration">GPT Integration</button>
+        <a href="./pages/gptIntegration/integrationMain.html">
+          <button class="test-feature" id="gpt-integration">GPT Integration</button>
         </a>
         <!-- <a>
           <button class="test-button-1" type="button" onclick="myFunction()">Try it</button>

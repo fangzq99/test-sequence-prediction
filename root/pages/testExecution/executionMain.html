@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';" />
+    <title>Execution Main Page</title>
+    <link rel="stylesheet" href="../../styles/testExecution.css" />
+    <link rel="stylesheet" href="../../styles/universalStyles.css" />
+    <script src="../scripts/universalScripts.js"></script>
+    <script src="../scripts/testExecution/testExecution.js"></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="image-container">
+        <a href="../../index.html" class="home-icon" id="main-logo">
+          <img src="../../images/home-icon.png" alt="" />
+        </a>
+      </div>
+      <div class="small-vertical-divider-container">
+        <div class="navbar-small-divider"></div>
+      </div>
+      <div class="title-container">
+        <h1 class="page-title">Test Execution</h1>
+      </div>
+      <div class="navbar-placeholder-container">
+        <!-- <a href="#home" id="logo">
+          <img src="./images/perhaps-cow.jpg" alt="" />
+        </a> -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="navbar-menu-container">
+        <button class="menu-button">Menu</button>
+        <ul class="dropdown-menu">
+          <li class="navbar_item">
+            <a href="../../index.html" class="navbar-links" id="home-page">
+              <div>Home</div>
+            </a>
+          </li>
+          <li class="navbar_item">
+            <a href="../../pages/testResources/resourcesMain.html" class="navbar-links" id="test-resources-page">
+              <div>Test Resources</div>
+            </a>
+          </li>
+          <li class="navbar_item">
+            <a href="../../pages/gptIntegration/integrationMain.html" class="navbar-links" id="gpt-integration-page">
+              <div>GPT Integration</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr class="navbar-divider" />
+
+    <main>
+      <div class="framework-selection-container">
+        <div class="title-container">
+          <h1>Please select your framework</h1>
+        </div>
+        <div class="buttons-container">
+          <a href="./cypressLanguageSelection.html">
+            <button class="framework-choice" id="cypress-choice">Cypress</button>
+          </a>
+          <a href="./pytestLanguageSelection.html">
+            <button class="framework-choice" id="pytest-choice">Pytest</button>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
