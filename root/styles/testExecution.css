@@ -40,18 +40,15 @@ a[href] {
   margin: 0 10px 0 10px;
 }
 
-.framework-selection-container .buttons-container button {
-  width: 170px; /* Set the same width for all buttons */
-  height: 50px; /* Set the same height for all buttons */
-  /* padding: 5px; */
+/* .framework-selection-container .buttons-container button {
+  width: 170px; 
+  height: 50px; 
   margin: 10px;
   text-decoration: none;
   background-color: rgb(61, 144, 200);
   color: white;
   padding: 10px 20px;
-  /* border: none; */
   border: 1px solid black;
-  /* border-color: black; */
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
@@ -61,4 +58,23 @@ a[href] {
 .framework-selection-container .buttons-container button:hover {
   background-color: #ece5e5;
   color: black;
+} */
+
+.framework-selection-container .buttons-container button {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 170px;
+  height: 50px;
+  padding: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.framework-selection-container .buttons-container button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.framework-selection-container .buttons-container button:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
 }
