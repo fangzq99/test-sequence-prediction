@@ -32,6 +32,10 @@
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
 }
 
+.home-icon-container {
+  display: flex;
+}
+
 .home-icon img {
   width: 30px;
   /* height: 40px; */
@@ -52,7 +56,7 @@
   /* top: 5px; */
 }
 
-.title-container {
+.navbar .title-container {
   max-height: 100%;
   max-width: 100%;
   box-sizing: border-box;

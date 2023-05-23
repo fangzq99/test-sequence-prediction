@@ -26,6 +26,7 @@ a[href] {
 .framework-selection-container .title-container {
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 
 .framework-selection-container .title-container h1 {
@@ -77,4 +78,33 @@ a[href] {
 
 .framework-selection-container .buttons-container button:active {
   box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropbox-container {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 50vw;
+}
+
+.dropbox-container .execution-page-title-container h1 {
+  /* max-height: 100%; */
+  max-width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  padding: 20px;
+  /* margin: auto; */
+  font-size: 15px;
+  font-weight: normal;
+  /* font-family: sans-serif, 'Kumb Sans'; */
+  white-space: wrap;
+}
+
+.dropbox-container .drag-and-drop-box {
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  max-height: 200px;
+  border: 1px dotted black;
+  margin: 0 0 0 20px;
 }
