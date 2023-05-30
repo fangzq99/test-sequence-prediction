@@ -12,5 +12,5 @@
     "[json]": {
       "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "python.analysis.typeCheckingMode": "basic", // set as "true" to run 'prettier' last not first
+    "python.formatting.provider": "black",
   }
