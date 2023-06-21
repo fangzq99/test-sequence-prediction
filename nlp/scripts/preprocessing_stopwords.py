@@ -42,6 +42,12 @@ if __name__ == "__main__":
     #         "extractor.py",
     #     ]
     # ).wait()
+    # subprocess.Popen(
+    #     [
+    #         "C:\\Users\\fzq99\\OneDrive\\Desktop\\Projects\\Repositories\\capstone-project\\nlp\\py311venv\\Scripts\\python.exe",
+    #         "modify_data.py",
+    #     ]
+    # ).wait()
 
     # Read the Excel file into a DataFrame
     filtered_df_with_mock_up_time = pd.read_excel("modified_data.xlsx")
@@ -57,9 +63,13 @@ if __name__ == "__main__":
         == df_without_stop_words[column2_name].values
     ).all()
     if are_same:
-        print("Stop Words filtering may not be working")
+        print("Additional Check: Stop Words filtering may not be working")
     else:
-        print("\nStop Words filtered")
+        print("\nAdditional Check: Stop Words filtered")
 
     # Save the updated DataFrame to a new Excel file
     df_without_stop_words.to_excel("preprocess_stopwords.xlsx", index=False)
+
+    print(
+        "\nFiltered stop words data stored in preprocess_stopwords.xlsx successfully."
+    )

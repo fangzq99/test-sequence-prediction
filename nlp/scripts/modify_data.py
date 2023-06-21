@@ -141,6 +141,11 @@ def generate_mockup_sequence_run(df):
     # Sort the DataFrame by Run Count in descending order
     sequence_run_df = sequence_run_df.sort_values(by="Run Count", ascending=False)
 
+    # Add the "Top runs" column based on the run count
+    sequence_run_df["Top Runs Ranking"] = sequence_run_df["Run Count"].rank(
+        ascending=False, method="first"
+    )
+
     return sequence_run_df
 
 

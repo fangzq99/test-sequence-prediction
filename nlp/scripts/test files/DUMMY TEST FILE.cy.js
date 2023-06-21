@@ -3,7 +3,7 @@ import { baseURL, commonlyUsedCCCompanyWorksite, leobotReportTest, r3ReportInput
 import { reportsUsers } from '../../../../support/Region Constants/userPrivileges.js';
 import * as cleaningJobs from '../../../../support/Automation Tests Commands/Report Commands/cleaningJobsCommands.js';
 
-context('We why Reports tests (Cleaning Jobs)', () => {
+context('Reports tests (Cleaning Jobs)', () => {
   before(() => {
     deploymentCommands.redeployRobotAsSuperAdmin({
       companyName: commonlyUsedCCCompanyWorksite['companyName'],
