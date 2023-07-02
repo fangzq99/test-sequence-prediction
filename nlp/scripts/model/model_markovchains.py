@@ -72,14 +72,7 @@ if __name__ == "__main__":
 
     # Visualize as heatmap
     plt.figure(figsize=(10, 10))
-    # sns.heatmap(
-    #     transition_matrix,
-    #     xticklabels=state_list,
-    #     yticklabels=state_list,
-    #     annot=True,
-    #     cmap="YlGnBu",
-    # )
     sns.heatmap(transition_matrix, xticklabels=state_list, yticklabels=state_list)
-
     plt.title("Visualization of Base Markov Chain State Transitions")
+    plt.savefig("Visualization of markov chain state transitions")
     plt.show()

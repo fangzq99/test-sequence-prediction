@@ -12,10 +12,10 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import matplotlib.pyplot as plt
 from scipy import stats
 
-model_filename = "lstm_model_noencoder.h5"
+model_filename = "lstm_model_epoch50_base.h5"
 
 # Prepare data
-sequence_run_df = pd.read_excel("../preprocessing/full/sequence_runs.xlsx")
+sequence_run_df = pd.read_excel("../preprocessing/full/sequence_runs_split.xlsx")
 sequences = sequence_run_df["Sequence"].tolist()
 sequences = [ast.literal_eval(seq) for seq in sequences]
 
@@ -87,7 +87,7 @@ else:
     )
 
     # Train the model
-    history = model.fit(X_train, y_train, epochs=200, verbose=1)
+    history = model.fit(X_train, y_train, epochs=50, verbose=1)
 
     # Save the trained model
     model.save(model_filename)
@@ -128,6 +128,7 @@ plt.xlabel("True Values", fontsize=15)
 plt.ylabel("Predictions", fontsize=15)
 plt.axis("equal")
 plt.title("Predicted vs. True Values Scatter Plot")
+plt.savefig("predictedvstrue_scatterplot.png")
 plt.show()
 
 # Histogram of residuals
@@ -154,9 +155,7 @@ def prepare_input_sequence(seq):
 
 
 # Test the function
-input_sequence = [
-    "a1037",
-]
+input_sequence = ["a1033"]
 prepared_sequence = prepare_input_sequence(input_sequence)
 predictNextNumber = model.predict(prepared_sequence, verbose=1)
 

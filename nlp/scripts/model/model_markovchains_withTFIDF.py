@@ -135,4 +135,5 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 10))
     sns.heatmap(transition_matrix, xticklabels=state_list, yticklabels=state_list)
     plt.title("Visualization of Modified Markov Chain State Transitions")
+    plt.savefig("Visualization of modified markov chain state transitions")
     plt.show()

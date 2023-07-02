@@ -21,10 +21,10 @@ from numpy import argmax
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 
-model_filename = "lstm_model.h5"
+model_filename = "lstm_model_onehotencoder.h5"
 
 # Prepare data
-sequence_run_df = pd.read_excel("../preprocessing/full/sequence_runs.xlsx")
+sequence_run_df = pd.read_excel("../preprocessing/full/sequence_runs_split.xlsx")
 sequences = sequence_run_df["Sequence"].tolist()
 sequences = [ast.literal_eval(seq) for seq in sequences]
 
@@ -103,8 +103,17 @@ else:
     model.compile(
         optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"]
     )
-    model.fit(X_train, y_train, epochs=50, verbose=1)
+    history = model.fit(X_train, y_train, epochs=50, verbose=1)
     model.save(model_filename)
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(history.history["loss"])
+    plt.title("Model loss")
+    plt.ylabel("Loss")
+    plt.xlabel("Epoch")
+    plt.legend(["Train"], loc="upper right")
+    plt.savefig("loss_plot_classification.png")
+    plt.show()
 
 
 def prepare_input_sequence(seq):
@@ -180,7 +189,11 @@ plt.title("Probability Distribution Across States")
 plt.xlabel("States")
 plt.ylabel("Probability")
 plt.xticks(rotation=90)  # Rotate x-axis labels for better readability
-plt.show()
+plt.savefig(
+    "probability_distribution_states.png",
+    bbox_inches="tight",
+)
+# plt.show()
 
 # Get the top 5 states with the highest probabilities
 top_5_indices = np.argsort(probabilities)[-5:][::-1]
@@ -193,7 +206,11 @@ plt.bar(top_5_states, top_5_probs)
 plt.title("Top 5 States with Highest Probabilities")
 plt.xlabel("States")
 plt.ylabel("Probability")
-plt.show()
+plt.savefig(
+    "top5_states_highest_probabilities.png",
+    bbox_inches="tight",
+)
+# plt.show()
 
 # reshape X_test to be [samples, timesteps, features]
 X_test_reshaped = X_test.reshape((X_test.shape[0], X_test.shape[1], n_features))
@@ -221,9 +238,9 @@ cm = confusion_matrix(y_test_class, y_pred_class)
 
 # plot confusion matrix
 plt.figure(figsize=(10, 10))
-sns.heatmap(cm, fmt=".0f", linewidths=0.5, square=True, cmap="Blues")
+sns.heatmap(cm, fmt=".0f", linewidths=0.5, square=True)
 plt.ylabel("Actual label")
 plt.xlabel("Predicted label")
-
-plt.title("Confusion Matrix", size=15)
-plt.show()
+plt.title("Confusion Matrix For Actual vs Predicted label", size=15)
+plt.savefig("confusion_matrix.png", bbox_inches="tight")
+# plt.show()
