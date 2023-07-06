@@ -1,4 +1,5 @@
 import ast
+import os
 import subprocess
 import numpy as np
 import pandas as pd
@@ -7,18 +8,23 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import seaborn as sns
 import matplotlib.pyplot as plt
+import argparse
 
-# np.random.seed(1)
-
-# # assume you have a dictionary where the keys are states and the values are the associated words
-# state_to_words = {
-#     "a1001": ["login", "user", "fail"],
-#     "a1002": ["login", "user", "pass"],
-#     # add other states here
-# }
+# set up argument parser
+parser = argparse.ArgumentParser(description="Process some input.")
+parser.add_argument("--state", type=str, help="State to be predicted")
+args = parser.parse_args()
 
 # Read the Excel file
-df = pd.read_excel("../preprocessing/full/preprocess_stemming_lemmatizing.xlsx")
+script_dir = os.path.dirname(
+    os.path.abspath(__file__)
+)  # get directory of the current script
+excel_file_path = os.path.join(
+    script_dir, "../../preprocessing/full/preprocess_stemming_lemmatizing.xlsx"
+)
+df = pd.read_excel(excel_file_path)
+
+# np.random.seed(1)
 
 # Initialize a defaultdict of lists
 state_to_words = defaultdict(list)
@@ -77,17 +83,19 @@ def predict_next_state(current_state):
     )
 
     # Print the probabilities of all possible next states
-    print(
-        f"\nPossible next states and their probabilities from the current state '{current_state}':"
-    )
-    for state, prob in sorted_states_probs:
-        print(f"State: {state}, Probability: {prob}")
+    # print(
+    #     f"\nPossible next states and their probabilities from the current state '{current_state}':"
+    # )
+    # for state, prob in sorted_states_probs:
+    #     print(f"State: {state}, Probability: {prob}")
 
     return next_state
 
 
 if __name__ == "__main__":
-    sequence_run_df = pd.read_excel("../preprocessing/full/sequence_runs_split.xlsx")
+    sequence_run_df = pd.read_excel(
+        os.path.join(script_dir, "../../preprocessing/full/sequence_runs_split.xlsx")
+    )
     sequences = sequence_run_df["Sequence"].tolist()
 
     sequences = [ast.literal_eval(seq) for seq in sequences]
@@ -108,16 +116,18 @@ if __name__ == "__main__":
     for key, count in transitions.items():
         transitions[key] = count / state_totals[key[0]]
 
-    # Testing
-    print("The current referenced file is: sequence_runs.xlsx")
-    current_state = input("State to be predicted next: ")
-    next_state = predict_next_state(current_state)
-    if next_state == False:
-        print(f"\nNo next state can be predicted from current state '{current_state}'.")
-    else:
-        print(
-            f"\nCurrent state is {current_state}. Predicted next state is {next_state}."
-        )
+    if args.state:
+        # print("The current referenced file is: sequence_runs.xlsx")
+        current_state = args.state  # Get the state from the command-line argument
+        next_state = predict_next_state(current_state)
+        if next_state == False:
+            print(
+                f"No next state can be predicted from current state '{current_state}'."
+            )
+        else:
+            print(
+                f"Current state is {current_state}. Predicted next state is {next_state}."
+            )
 
     # Generate transition matrix
     state_list = sorted(list(state_to_words.keys()))
@@ -136,4 +146,4 @@ if __name__ == "__main__":
     sns.heatmap(transition_matrix, xticklabels=state_list, yticklabels=state_list)
     plt.title("Visualization of Modified Markov Chain State Transitions")
     plt.savefig("Visualization of modified markov chain state transitions")
-    plt.show()
+    # plt.show()

@@ -7,6 +7,24 @@
     <title>Execution Main Page</title>
     <link rel="stylesheet" href="../../styles/testExecution.css" />
     <link rel="stylesheet" href="../../styles/universalStyles.css" />
+    <script>
+      const electron = require('electron');
+      const { ipcRenderer } = electron;
+
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById('process-button').addEventListener('click', () => {
+          const userInput = document.getElementById('user-input').value;
+          ipcRenderer.send('run-python-script', userInput);
+        });
+
+        ipcRenderer.on('python-script-result', (event, result) => {
+          document.getElementById('output').innerText = result;
+        });
+      });
+    </script>
+    <script src="../../scripts/testExecution/runTests.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
   </head>
 
   <body>
@@ -55,18 +73,35 @@
     <hr class="navbar-divider" />
 
     <main>
-      <div class="framework-selection-container">
-        <div class="title-container">
-          <h1>Please select your framework</h1>
+      <a href="../../../nlp/scripts/preprocessing/full/sequence_runs_split.xlsx" download>
+        <button id="sequence-button">Sequence Records</button>
+      </a>
+
+      <div id="scrollableContainer">
+        <ul id="informationList">
+          <!-- Items will be dynamically populated -->
+        </ul>
+      </div>
+
+      <div id="input-area">
+        <input type="text" id="user-input" placeholder="Enter your input here" />
+        <button id="process-button">Process</button>
+      </div>
+      <div id="output-container">
+        <div id="output-area">
+          <p id="output"></p>
         </div>
-        <div class="buttons-container">
-          <a href="./cypressLanguageSelection.html">
-            <button class="framework-choice" id="cypress-choice">Cypress</button>
-          </a>
-          <a href="./pytestLanguageSelection.html">
-            <button class="framework-choice" id="pytest-choice">Pytest</button>
-          </a>
-        </div>
+      </div>
+
+      <div id="model-selection-area">
+        <select id="model-select">
+          <option value="">Select a model</option>
+          <option value="model1">Markov Chain</option>
+          <option value="model2">Markov Chain (Modified)</option>
+          <option value="model3">LSTM Classification</option>
+          <option value="model4">LSTM Regression</option>
+          <!-- Add more options for each model -->
+        </select>
       </div>
     </main>
 

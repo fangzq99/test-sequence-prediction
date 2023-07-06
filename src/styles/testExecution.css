@@ -108,3 +108,98 @@ a[href] {
   border: 1px dotted black;
   margin: 0 0 0 20px;
 }
+
+#skip-button {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 130px;
+  height: 40px;
+  padding: 5px;
+  margin: 10px;
+  cursor: pointer;
+  bottom: 20px;
+  right: 20px;
+  position: fixed;
+}
+
+#skip-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+#skip-button:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#sequence-button {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 130px;
+  height: 40px;
+  padding: 5px;
+  margin: 10px;
+  cursor: pointer;
+  top: 80px;
+  right: 40px;
+  position: fixed;
+}
+
+#sequence-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+#sequence-button:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#input-area {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+#output-container {
+  position: fixed;
+  border: 1px solid black;
+  width: 200px;
+  height: 100px;
+  bottom: 50px;
+  right: 50px;
+  overflow: auto; /* Add scrollbars if the content is too big */
+  resize: both;
+}
+
+#output-area {
+  /* margin-left: 20px; */
+  margin: 4px;
+  font-size: 12px; /* This is an example, adjust it according to your needs. This will scale the font-size with the viewport width */
+}
+
+#scrollableContainer {
+  width: 300px; /* or any desired width */
+  height: 300px; /* or any desired height */
+  overflow: auto; /* or 'scroll' */
+  border: 1px solid black; /* Add border here */
+  margin-top: 20px; /* distance from the top */
+  margin-left: 20px; /* distance from the left */
+}
+
+#informationList {
+  list-style-type: none; /* remove bullets from list */
+  margin-top: 10px; /* distance from the top */
+  margin-left: 10px; /* distance from the left */
+  padding: 0;
+}
+
+#informationList li {
+  margin-bottom: 6px;
+}
+
+#model-selection-area {
+  margin-right: 20px;
+  margin-top: 50px;
+  right: 30px;
+  top: 130px;
+  position: fixed;
+}

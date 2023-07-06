@@ -21,7 +21,7 @@ from numpy import argmax
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 
-model_filename = "lstm_model_onehotencoder.h5"
+model_filename = "lstm_model_onehotencoder_epoch50_split.h5"
 
 # Prepare data
 sequence_run_df = pd.read_excel("../preprocessing/full/sequence_runs_split.xlsx")

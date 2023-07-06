@@ -158,6 +158,9 @@ def prepare_input_sequence(seq):
 input_sequence = ["a1033"]
 prepared_sequence = prepare_input_sequence(input_sequence)
 predictNextNumber = model.predict(prepared_sequence, verbose=1)
+print(
+    f"\nCurrent state is {input_sequence} and its encoded number is {le.transform(input_sequence)}."
+)
 
 # Round and inverse transform the predicted number
 predicted_state = le.inverse_transform([round(predictNextNumber[0, 0])])
