@@ -14,32 +14,12 @@ def extract_test_info(file_name, file_content):
     pattern = r"(context|it)\(['](.+?)[']"
 
     matches = re.findall(pattern, file_content)
-    # BUG: this doesnt work correctly
-    # Track the current level
-    # current_context_level = 0
-    # current_it_level = 1
-    # previous_context_level = 0
     if matches:
         for match_tuples in matches:
             type, test_name = match_tuples
 
-            # BUG: this doesnt work correctly
-            # # Check if it's a context
-            # if type == "context":
-            #     current_context_level += 1
-            # if current_context_level != 1:
-            #     if current_context_level == previous_context_level:
-            #         # Check if it's a it
-            #         if type == "it":
-            #             current_it_level += 1
-            #     else:
-            #         current_it_level == 1
-
             # Append the test name with the current level
             test_names_data.append((type, test_name))
-
-            # BUG: this doesnt work correctly
-            # previous_context_level = current_context_level
     return test_names_data
 
 

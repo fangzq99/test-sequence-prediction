@@ -97,9 +97,6 @@ else:
     model_layers = model.layers
     model.summary()
 
-    # Create an optimizer with clipvalue
-    opt = Adam(clipvalue=0.5)
-
     model.compile(
         optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"]
     )
