@@ -50,8 +50,17 @@ def calculate_similarity(state1, state2):
     tfidf1 = vectorizer.transform([" ".join(words1)])
     tfidf2 = vectorizer.transform([" ".join(words2)])
 
+    # print TF-IDF vectors
+    print(f"\nTF-IDF vector for state '{state1}':")
+    print(tfidf1.toarray())
+
+    print(f"\nTF-IDF vector for state '{state2}':")
+    print(tfidf2.toarray())
+
     # calculate the cosine similarity between the two vectors
     similarity = cosine_similarity(tfidf1, tfidf2)[0, 0]
+
+    print(f"\nCosine similarity between state '{state1}' and '{state2}': {similarity}")
 
     return similarity
 
